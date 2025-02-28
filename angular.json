@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Mb-Patel-Science-College": {
+    "Shree-V.J-Patel-Higher-Secondary-School": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Mb-Patel-Science-College",
+            "outputPath": "dist/Shree-V.J-Patel-Higher-Secondary-School",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -99,10 +99,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Mb-Patel-Science-College:build:production"
+              "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:production"
             },
             "development": {
-              "browserTarget": "Mb-Patel-Science-College:build:development"
+              "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -110,7 +110,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Mb-Patel-Science-College:build"
+            "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build"
           }
         },
         "test": {
@@ -161,5 +161,5 @@
       }
     }
   },
-  "defaultProject": "Mb-Patel-Science-College"
+  "defaultProject": "Shree-V.J-Patel-Higher-Secondary-School"
 }

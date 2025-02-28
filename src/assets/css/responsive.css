@@ -345,7 +345,7 @@
 
 @media only screen and (max-width: 1199px) {
     .full-width-header.home1-modifiy .rs-header .menu-area .rs-menu-area .main-menu .rs-menu ul.nav-menu li {
-        margin-right: 9px !important;
+        margin-right: 12px !important;
     }
     .full-width-header.header-style1 .rs-header .menu-area .main-menu .rs-menu .rs-mega-menu .mega-menu,
     .full-width-header.home8-style4 .rs-header .menu-area .rs-menu-area .main-menu .rs-menu .rs-mega-menu .mega-menu{
@@ -381,7 +381,7 @@
     .full-width-header.header-style3.home-style15 .rs-header .menu-area .custom-table .header-logo .custom-logo-area {
         position: absolute;
         top: -1px;
-        background: #a45e4d;
+        background: #5a6230;
         padding: 27px 35px 27px 22px;
         left: 0;
     }
@@ -389,7 +389,7 @@
         right: -175px;
         margin: 0 auto;
         max-width: 800px;
-        background: #a45e4d !important;
+        background: #5a6230 !important;
     }
     .full-width-header .rs-header .topbar-area.home11-topbar.modify1.home15-style {
         padding-left: 13px;
@@ -1291,7 +1291,7 @@
         margin-bottom: 8px;
     }
     .full-width-header.header-style3.home-style15 .rs-header .menu-area .custom-table .rs-menu-area .main-menu .rs-menu ul.sub-menu li a:hover {
-        color: #a45e4d !important;
+        color: #5a6230 !important;
     }
     .rs-banner.style13 {
         padding: 100px 0px 0px 0px;

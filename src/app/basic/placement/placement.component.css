@@ -29,8 +29,8 @@
 .intro-section .intro-tabb .tab-btns .tab-btn:hover,
 .intro-section .intro-tabb .tab-btns .tab-btn.active {
   color: #ffffff;
-  background: #a45e4d;
-  border-color: #a45e4d;
+  background: #5a6230;
+  border-color: #5a6230;
 }
 
 .intro-section .intro-tabb .tabs-content {
@@ -41,7 +41,7 @@
 
 .intro-section .intro-tabb .tabs-content .minutes {
   position: relative;
-  color: #a45e4d;
+  color: #5a6230;
   font-size: 14px;
   font-weight: 500;
   margin-top: 12px;

@@ -92,12 +92,12 @@
                         <ul class="topbar-contact">
                             <li>
                                 <i class="flaticon-email"></i>
-                                <a href="mailto:mbpatel@cesociety.in" style="font-size:12px !important;">
-                                    mbpatel&#64;cesociety.in</a>
+                                <a href="mailto:vjp@cesociety.in" style="font-size:12px !important;">
+                                    vjp&#64;cesociety.in</a>
                             </li>
                             <li>
                                 <i class="flaticon-phone"></i>
-                                <a href="tel:02692-243102" style="font-size:12px !important;"> (02692) 243102</a>
+                                <a href="tel:02692-250669" style="font-size:12px !important;"> (02692) 250669</a>
                             </li>
                         </ul>
                     </div>
@@ -150,14 +150,14 @@
                         <li class="menu-item lm">
                             <a href="https://cesociety.in/#/celebration" target="_blank">Centenary Celebration</a>
                         </li>
-                        |
+                        <!-- |
                         <li class="menu-item lm">
                             <a href="javascript:void(0);">Feedback</a>
                         </li>
                         |
                         <li class="menu-item lm">
                             <a href="assets/images/RTI.pdf" target="blank">RTI</a>
-                        </li>
+                        </li> -->
                         |
                         <li class="menu-item lm">
                             <a href="https://cesociety.in/#/counselling" target="_blank">Free Counselling</a>
@@ -193,6 +193,17 @@
                     </li>
                     <li class="btn-group">
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Gallery/Media</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/gallery/photos"
+                                    routerLinkActive="active">Photos</a> </li>
+                            <li><a class="dropdown-item" routerLink="/more/magazine" routerLinkActive="active">Our
+                                    Magazine</a> </li>
+                        </ul>
+                    </li>
+                    <li class="btn-group">
+                        <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Department</a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0);" class="dropdown-item"
@@ -205,26 +216,9 @@
                         <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
                             routerLink="/basic/infrastructure" routerLinkActive="active">Facilities</a>
                     </li>
-                    <li class="menu-item">
-                        <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            routerLink="/basic/research" routerLinkActive="active">Research</a>
-                    </li>
                     <li class="btn-group">
                         <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
                             routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            routerLink="/basic/placement" routerLinkActive="active">Placement</a>
-                    </li>
-                    <li class="btn-group">
-                        <a class="btn btn-lg" routerLink="/iqac/naac" routerLinkActive="active">NAAC</a>
-                    </li>
-                    <li class="btn-group">
-                        <a class="btn btn-lg" routerLink="/basic/gsirf" routerLinkActive="active">GSIRF</a>
-                    </li>
-                    <li class="btn-group">
-                        <a class="btn btn-lg" routerLink="/basic/nirf" routerLinkActive="active">NIRF</a>
                     </li>
                     <li class="btn-group">
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -252,9 +246,6 @@
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">More</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" routerLink="/gallery/photos"
-                                    routerLinkActive="active">Photos</a>
-                            </li>
                             <li><a class="dropdown-item" routerLink="/more/result" routerLinkActive="active">Results</a>
                             </li>
                             <li><a class="dropdown-item" routerLink="/more/news" routerLinkActive="active">News &
@@ -278,7 +269,7 @@
         <div class="menu-area menu-sticky">
             <!-- main-menu -->
             <div class="container" style="max-width:3000px;">
-                <div class="row y-middle" style="background-color: #a45e4d ; height: 50px;">
+                <div class="row y-middle" style="background-color: #5a6230 ; height: 50px;">
                     <div class="col-lg-12 text-end">
                         <div class="rs-menu-area">
                             <div class="main-menu">
@@ -296,6 +287,16 @@
                                             <a routerLink="/basic/about" routerLinkActive="active">About Us</a>
                                         </li>
                                         <li class="menu-item-has-children">
+                                            <a>Gallery/Media</a>
+
+                                            <ul class="sub-menu">
+                                                <li><a routerLink="/gallery/photos" routerLinkActive="active">Photos</a>
+                                                </li>
+                                                <li><a routerLink="/more/magazine" routerLinkActive="active">Our
+                                                        Magazine Balmitra</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
                                             <a>Department</a>
                                             <ul class="sub-menu">
                                                 <li><a href="javascript:void(0);"
@@ -309,24 +310,8 @@
                                                 routerLinkActive="active">Facilities</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a routerLink="/basic/research" routerLinkActive="active">Research</a>
-                                        </li>
-                                        <li class="menu-item">
                                             <a routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
                                         </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/placement" routerLinkActive="active">Placement</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/iqac/naac" routerLinkActive="active">NAAC</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/gsirf" routerLinkActive="active">GSIRF</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/nirf" routerLinkActive="active">NIRF</a>
-                                        </li>
-
                                         <li class="menu-item-has-children">
                                             <a>Student Corner</a>
                                             <ul class="sub-menu">
@@ -353,8 +338,6 @@
                                         <li class="menu-item-has-children">
                                             <a href="javascript:void(0);">More</a>
                                             <ul class="sub-menu">
-                                                <li><a routerLink="/gallery/photos" routerLinkActive="active">Photos</a>
-                                                </li>
                                                 <li><a routerLink="/more/result" routerLinkActive="active">Results</a>
                                                 </li>
                                                 <li>
@@ -385,7 +368,7 @@
             <div style="max-width:100%;">
                 <div class="secondToolbar" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
                     <!-- <img src="assets/images/CES_logo.png" alt=""> -->
-                    <div class="row" style="background-color: #a45e4d ; height: 50px;">
+                    <div class="row" style="background-color: #5a6230 ; height: 50px;">
                         <div class="col-lg-2 text-end mt-10">
                             <a routerLink="/home/main" routerLinkActive="active">
                                 <img src="assets/images/logo/2.png" alt="" width="45%">
@@ -409,6 +392,16 @@
                                                 <a routerLink="/basic/about" routerLinkActive="active">About Us</a>
                                             </li>
                                             <li class="menu-item-has-children">
+                                                <a>Gallery/Media</a>
+    
+                                                <ul class="sub-menu">
+                                                    <li><a routerLink="/gallery/photos" routerLinkActive="active">Photos</a>
+                                                    </li>
+                                                    <li><a routerLink="/more/magazine" routerLinkActive="active">Our
+                                                            Magazine Balmitra</a> </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children">
                                                 <a>Department</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="javascript:void(0);"
@@ -422,24 +415,8 @@
                                                     routerLinkActive="active">Facilities</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a routerLink="/basic/research" routerLinkActive="active">Research</a>
-                                            </li>
-                                            <li class="menu-item">
                                                 <a routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
                                             </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/placement" routerLinkActive="active">Placement</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/iqac/naac" routerLinkActive="active">NAAC</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/gsirf" routerLinkActive="active">GSIRF</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/nirf" routerLinkActive="active">NIRF</a>
-                                            </li>
-
                                             <li class="menu-item-has-children">
                                                 <a>Student Corner</a>
                                                 <ul class="sub-menu">
@@ -469,9 +446,6 @@
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0);">More</a>
                                                 <ul class="sub-menu">
-                                                    <li><a routerLink="/gallery/photos"
-                                                            routerLinkActive="active">Photos</a>
-                                                    </li>
                                                     <li><a routerLink="/more/result"
                                                             routerLinkActive="active">Results</a>
                                                     </li>

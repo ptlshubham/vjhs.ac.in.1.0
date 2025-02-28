@@ -9,7 +9,7 @@ import { HomeService } from './core/services/home.services';
 })
 export class AppComponent implements OnInit {
   private router: Router;
-  staticURL: any = 'www.mbpatelscience.ac.in';
+  staticURL: any = 'www.vjhs.ac.in';
   constructor(
     router: Router,
     private homeService: HomeService
@@ -34,5 +34,5 @@ export class AppComponent implements OnInit {
       localStorage.setItem('InstituteURL', res[0].url);
     })
   }
-  title = 'Mb-Patel-Science-College';
+  title = 'Shree-V.J-Patel-Higher-Secondary-School';
 }
