@@ -1,0 +1,35 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.rs-degree.style1 .degree-wrap:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(transparent, #fff);
+}
+.rs-about.style1 .notice-bord.style1 {
+    margin-top: 0px;
+}
+
+.mainBorder{
+    border: 1px black !important;
+    border-style: solid;
+}

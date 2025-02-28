@@ -1,0 +1,241 @@
+<app-header></app-header>
+
+<body class="defult-home">
+    <div class="main-content">
+        <style>
+            p {
+                text-align: justify;
+            }
+        </style>
+        <section class="intro-section gray-bg pt-40 pb-100 md-pt-80 md-pb-70">
+            <div class="container">
+                <div class="row clearfix">
+
+                    <div class="col-lg-12 md-mb-10 mt-10">
+                        <ul class="nav nav-tabs intro-tabb tabs-box" id="myTab" role="tablist">
+                            <li class="nav-item tab-btns" role="presentation">
+                                <a class="nav-link tab-btn active" id="prod-overview-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#overview" role="tab" aria-controls="overview"
+                                    aria-selected="true">Overview</a>
+                            </li>
+                            <li class="nav-item tab-btns" role="presentation">
+                                <a class="nav-link tab-btn" id="prod-curriculum-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#staff-list" role="tab" aria-controls="staff-list"
+                                    aria-selected="false">Staff Details</a>
+                            </li>
+                            <!-- <li class="nav-item tab-btns" role="presentation">
+                                <a class="nav-link tab-btn" id="prod-instructor-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#student-list" role="tab" aria-controls="student-list"
+                                    aria-selected="false">Student Details</a>
+                            </li> -->
+                            <li class="nav-item tab-btns" role="presentation">
+                                <a class="nav-link tab-btn" id="prod-instructor-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#student-achieve" role="tab" aria-controls="student-achieve"
+                                    aria-selected="false">Student Achievements</a>
+                            </li>
+                            <li class="nav-item tab-btns" role="presentation">
+                                <a class="nav-link tab-btn" id="prod-instructor-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#staff-achieve" role="tab" aria-controls="staff-achieve"
+                                    aria-selected="false">Staff Achievements</a>
+                            </li>
+                        </ul>
+                        <div class="intro-info-tabs">
+                            <div class="tab-content tabs-content" id="myTabContent">
+                                <div class="tab-pane tab fade show active" id="overview" role="tabpanel"
+                                    aria-labelledby="prod-overview-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box">
+                                                <div class="row">
+                                                    <div class="sec-title2">
+                                                        <h2 class="title purple-color text-center mb-30">
+                                                            {{depData.department}}
+                                                        </h2>
+                                                        <div class="col-lg-6 offset-lg-3 mb-40"
+                                                            *ngIf="depData.images!='undefined'">
+                                                            <ngb-carousel [showNavigationArrows]="true"
+                                                                [showNavigationIndicators]="true" [interval]="2000"
+                                                                [keyboard]="true" [pauseOnHover]="true" [wrap]="true"
+                                                                [activeId]="'slideTwo'" class="carousel">
+                                                                <ng-template ngbSlide
+                                                                    *ngFor="let c of depData.images;let i=index">
+                                                                    <div class="picsum-img-wrapper">
+                                                                        <img src="https://api.cesociety.in{{c.image}}"
+                                                                            alt="Random first slide">
+                                                                    </div>
+                                                                </ng-template>
+                                                            </ngb-carousel>
+                                                        </div>
+                                                        <div class="col-lg-12 mt-1">
+                                                            <div [innerHTML]="depData.depdetails"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="staff-list" role="tabpanel"
+                                    aria-labelledby="prod-instructor-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box">
+                                                <div id="rs-team" class="rs-team style1 orange-color white-bg">
+                                                    <div class="sec-title2">
+                                                        <h2 class="title purple-color text-center mb-30">
+                                                            {{depData.department}}
+                                                        </h2>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h4 style="color: red;text-align: center;"
+                                                            *ngIf="filterData.length==0">Please Select Department for
+                                                            Staff
+                                                            Details.
+                                                        </h4>
+                                                        <div class="col-lg-3 col-sm-6 mb-30"
+                                                            *ngFor="let s of filterData | paginate: {id:'listing', itemsPerPage: 12, currentPage: pa };let i=index">
+                                                            <div class="team-item">
+                                                                <img src="https://api.cesociety.in{{s.profile_image}}"
+                                                                    alt="">
+                                                                <div class="content-part">
+                                                                    <h4 class="name textCustom"
+                                                                        style="color: white !important;">{{s.name}}</h4>
+                                                                    <span class="textCustom">{{s.designation}}</span>
+                                                                    <ul class="textCustom">
+                                                                        <li>{{s.qualification}}</li>
+                                                                        <li><a class="textCustom"
+                                                                                href="mailto:{{s.email}}">{{s.email}}</a>
+                                                                        </li>
+                                                                        <li>Joining Date : {{s.joining_date|date}}</li>
+                                                                        <li *ngIf="s.researchPaper !='undefined'"><u><a
+                                                                                    href="https://api.cesociety.in{{s.researchPaper}}"
+                                                                                    target="_blank"
+                                                                                    class="text-white">Read
+                                                                                    More <i class="fa fa-arrow-right"
+                                                                                        aria-hidden="true"></i>
+                                                                                </a></u>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-3" *ngIf="filterData.length>0">
+                                                        <div class="col text-end">
+                                                            <pagination-controls id="listing"
+                                                                (pageChange)="pa = $event"></pagination-controls>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="tab-pane fade" id="student-list" role="tabpanel"
+                                    aria-labelledby="prod-reviews-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box">
+                                                <div class="course-features-info">
+                                                    <div class="row">
+                                                        <div class="sec-title2">
+                                                            <h2 class="title purple-color text-center mb-30">Student
+                                                                Detail</h2>
+                                                        </div>
+                                                        <h4 style="color: red;text-align: center;"
+                                                            *ngIf="studentList.length==0">
+                                                            Data
+                                                            Not Found !</h4>
+                                                        <div class="col-sm-6 col-lg-6"
+                                                            *ngFor="let s of studentList | paginate: {id:'listing1', itemsPerPage: 6, currentPage: p };let i=index">
+                                                            <h5 style="text-align: center;">
+                                                                {{s.title}}</h5>
+                                                            <div [innerHTML]="s.details"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3" *ngIf="studentList.length>0">
+                                                    <div class="col text-end">
+                                                        <pagination-controls id="listing1"
+                                                            (pageChange)="p = $event"></pagination-controls>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="tab-pane fade" id="student-achieve" role="tabpanel"
+                                    aria-labelledby="prod-reviews-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box">
+                                                <div class="course-features-info">
+                                                    <div class="row">
+                                                        <div class="sec-title2">
+                                                            <h2 class="title purple-color text-center mb-30">Student
+                                                                Achievements</h2>
+                                                        </div>
+                                                        <h4 style="color: red;text-align: center;"
+                                                            *ngIf="studentAchievementsList.length==0">
+                                                            Data
+                                                            Not Found !</h4>
+                                                        <div class="col-sm-6 col-lg-6"
+                                                            *ngFor="let s of studentAchievementsList | paginate: {id:'listing1', itemsPerPage: 6, currentPage: pl };let i=index">
+                                                            <h5 style="text-align: center;">
+                                                                {{s.title}}</h5>
+                                                            <div [innerHTML]="s.details"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3" *ngIf="studentAchievementsList.length>0">
+                                                    <div class="col text-end">
+                                                        <pagination-controls id="listing1"
+                                                            (pageChange)="pl = $event"></pagination-controls>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="staff-achieve" role="tabpanel"
+                                    aria-labelledby="prod-reviews-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box">
+                                                <div class="course-features-info">
+                                                    <div class="row">
+                                                        <div class="sec-title2">
+                                                            <h2 class="title purple-color text-center mb-30">Staff
+                                                                Achievements</h2>
+                                                        </div>
+                                                        <h4 style="color: red;text-align: center;"
+                                                            *ngIf="staffAchievementsList.length==0">
+                                                            Data
+                                                            Not Found !</h4>
+                                                        <div class="col-sm-6 col-lg-6"
+                                                            *ngFor="let s of staffAchievementsList | paginate: {id:'listing1', itemsPerPage: 6, currentPage: ps };let i=index">
+                                                            <h5 style="text-align: center;">
+                                                                {{s.title}}</h5>
+                                                            <div [innerHTML]="s.details"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3" *ngIf="staffAchievementsList.length>0">
+                                                    <div class="col text-end">
+                                                        <pagination-controls id="listing1"
+                                                            (pageChange)="ps = $event"></pagination-controls>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<app-footer></app-footer>

@@ -1,0 +1,24 @@
+.blinking-bg {
+    height: auto;
+    width: 90%;
+    color: white;
+    animation: blink 1s infinite;
+    border-radius: 5px;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@keyframes blink {
+
+    0%,
+    49.9%,
+    100% {
+        background-color: #f1bf22;
+    }
+
+    50%,
+    99.9% {
+        background-color: #a45e4d;
+    }
+}

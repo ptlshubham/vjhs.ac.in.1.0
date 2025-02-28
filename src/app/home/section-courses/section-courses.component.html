@@ -1,0 +1,28 @@
+<section class="focus-sector pt-5 pb-5" *ngIf="departmentData.length>0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-12 mx-auto">
+                <div class="title text-center">
+                    <h2>Department</h2>
+                </div>
+            </div>
+        </div>
+        <div class="home-community-board__grid-wrapper">
+            <div class="home-community-board__grid-item" *ngFor="let s of departmentData;let i=index"
+                (click)="handleClick(s.id)">
+                <div class="home-community-board__grid-icon-wrapper">
+                    <a href="javascript:void(0)" class="btn-link"><img src="assets/images/icons/1.png"
+                            alt=""></a>
+                </div>
+                <div class="home-community-board__grid-stat-wrapper">
+                    <p class="home-community-board__grid-stat-description"><a href="javascript:void(0)"
+                            class="btn-link">{{s.department}}</a></p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>

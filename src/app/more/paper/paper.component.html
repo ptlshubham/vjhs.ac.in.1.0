@@ -1,0 +1,164 @@
+<app-header></app-header>
+
+<body class="defult-home">
+        <section class="intro-section gray-bg pt-40 md-pt-64 md-pb-70">
+                <div class="course-overview ">
+                        <div class="inner-box">
+                                <div class="main-content">
+                                        <div class="rs-faq-part rs-about style1">
+                                                <div class="container">
+                                                        <h3 style="text-align: center;">Select For Question
+                                                                Papers</h3>
+                                                        <div class="d-flex justify-content-end">
+                                                                <div class="d-inline-block me-2" ngbDropdown>
+                                                                        <button type="button"
+                                                                                class="btn btn-outline-primary"
+                                                                                id="dropdownBasic1" ngbDropdownToggle>
+                                                                                {{ selectedDepartment || 'Select Department' }}
+                                                                        </button>
+                                                                        <div ngbDropdownMenu
+                                                                                aria-labelledby="dropdownBasic1">
+                                                                                <button ngbDropdownItem disabled>Select
+                                                                                        Department</button>
+                                                                                <div *ngFor="let c of departmentData">
+                                                                                        <button ngbDropdownItem
+                                                                                                (click)="selectDepartment(c.department)">
+                                                                                                {{ c.department }}
+                                                                                        </button>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="d-inline-block me-2" ngbDropdown>
+                                                                        <button type="button"
+                                                                                class="btn btn-outline-primary"
+                                                                                id="dropdownBasic2" ngbDropdownToggle>
+                                                                                {{ selectedYear || 'Select Year' }}
+                                                                        </button>
+                                                                        <div ngbDropdownMenu
+                                                                                aria-labelledby="dropdownBasic2">
+                                                                                <button ngbDropdownItem disabled>Select
+                                                                                        Year</button>
+                                                                                <div *ngFor="let c of yearList">
+                                                                                        <button ngbDropdownItem
+                                                                                                (click)="selectYear(c.year)">
+                                                                                                {{ c.year }}
+                                                                                        </button>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="d-inline-block" ngbDropdown>
+                                                                        <button type="button"
+                                                                                class="btn btn-outline-primary"
+                                                                                id="dropdownBasic3" ngbDropdownToggle>
+                                                                                {{ selectedSemester || 'Select Semester'}}
+                                                                        </button>
+                                                                        <div ngbDropdownMenu
+                                                                                aria-labelledby="dropdownBasic3">
+                                                                                <button ngbDropdownItem disabled>Select
+                                                                                        Semester</button>
+                                                                                <div *ngFor="let c of semesterdata">
+                                                                                        <button ngbDropdownItem
+                                                                                                (click)="selectSemester(c.name)">
+                                                                                                {{ c.name }}
+                                                                                        </button>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="row mt-5">
+                                                                <div class="col-lg-12 md-mb-50">
+                                                                        <div class="intro-info-tabs">
+                                                                                <ul class="nav nav-tabs intro-tabs tabs-box"
+                                                                                        id="myTab" role="tablist">
+                                                                                        <li class="nav-item tab-btns"
+                                                                                                role="presentation">
+                                                                                                <a class="nav-link tab-btn active"
+                                                                                                        id="Chemistry"
+                                                                                                        data-bs-toggle="tab"
+                                                                                                        href="#"
+                                                                                                        data-bs-target="#prod-overview"
+                                                                                                        role="tab"
+                                                                                                        aria-controls="prod-overview"
+                                                                                                        aria-selected="true">Old
+                                                                                                        Question
+                                                                                                        Papers</a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                                <div class="tab-content tabs-content"
+                                                                                        id="myTabContent">
+                                                                                        <div class="tab-pane tab fade show active"
+                                                                                                id="prod-overview"
+                                                                                                role="tabpanel"
+                                                                                                aria-labelledby="Chemistry">
+                                                                                                <div
+                                                                                                        class="content white-bg pt-30">
+                                                                                                        <div
+                                                                                                                class="course-overview">
+                                                                                                                <div
+                                                                                                                        class="inner-box ">
+                                                                                                                        <div
+                                                                                                                                class="rs-degree style1 modify pt-10 pb-10 md-pt-70 md-pb-40">
+                                                                                                                                <div class="row"
+                                                                                                                                        *ngIf="papersList.length == 0"
+                                                                                                                                        style="text-align: center !important;">
+                                                                                                                                        <h3>
+                                                                                                                                                <span class="badge badge-danger"
+                                                                                                                                                        style="color: red">Please
+                                                                                                                                                        Select
+                                                                                                                                                        Above
+                                                                                                                                                        Filter
+                                                                                                                                                        For
+                                                                                                                                                        Papers</span><br>
+                                                                                                                                                <span class="badge badge-danger"
+                                                                                                                                                        style="color: red">No
+                                                                                                                                                        Data
+                                                                                                                                                        Available!</span>
+                                                                                                                                        </h3>
+                                                                                                                                </div>
+                                                                                                                                <div class="row"
+                                                                                                                                        *ngIf="papersList.length > 0">
+                                                                                                                                        <div class="col-lg-2 mb-30 col-md-2"
+                                                                                                                                                *ngFor="let c of papersList | paginate: {id:'listing1', itemsPerPage: 12, currentPage: pa }; let i = index">
+                                                                                                                                                <div
+                                                                                                                                                        class="gallery-img">
+                                                                                                                                                        <a href="https://api.cesociety.in{{c.files}}"
+                                                                                                                                                                target="_blank">
+                                                                                                                                                                <div class="mt-2 mb-2"
+                                                                                                                                                                        style="text-align: center !important;">
+                                                                                                                                                                        <span>{{c.subject}}</span>
+                                                                                                                                                                </div>
+                                                                                                                                                                <img src="assets/images/PDF.png" alt="">
+                                                                                                                                                                <div class="mt-2"
+                                                                                                                                                                        style="text-align: center !important;">
+                                                                                                                                                                        <span>{{c.semester}}</span>
+                                                                                                                                                                </div>
+                                                                                                                                                        </a>
+                                                                                                                                                </div>
+                                                                                                                                        </div>
+                                                                                                                                </div>
+                                                                                                                                <div
+                                                                                                                                        class="row">
+                                                                                                                                        <pagination-controls
+                                                                                                                                                id="listing1"
+                                                                                                                                                (pageChange)="pa = $event"></pagination-controls>
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+        <footer id="rs-footer" class="rs-footer">
+                <app-footer></app-footer>
+        </footer>
+</body>

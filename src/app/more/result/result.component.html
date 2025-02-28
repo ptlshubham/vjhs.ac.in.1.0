@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+<body class="defult-home">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .rs-degree.style1 .degree-wrap:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background: linear-gradient(transparent, #fff);
+        }
+    </style>
+    <!-- Intro Courses -->
+    <section class="intro-section gray-bg pt-40 md-pt-64 md-pb-70">
+        <div class="course-overview ">
+            <div class="inner-box">
+                <div class="main-content">
+                    <style>
+                        .rs-about.style1 .notice-bord.style1 {
+                            margin-top: 0px;
+                        }
+                    </style>
+                    <!-- Faq Section Start -->
+                    <div class="rs-faq-part rs-about style1">
+                        <div class="container">
+                            <div class="main-part">
+
+                                <div class="faq-content">
+                                    <div class="d-flex justify-content-between">
+
+                                        <h4 class="pt-40">Result List</h4>
+                                        <div class="form-group pt-40">
+                                            <div ngbDropdown class="d-inline-block">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    id="dropdownBasic1" ngbDropdownToggle>
+                                                    {{selectedYear}}
+                                                </button>
+                                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                                                    style="max-height: 200px; overflow-y: auto;">
+                                                    <div *ngFor="let y of years">
+                                                        <button ngbDropdownItem
+                                                            on-click="selectYear(y.value)">{{y.value}}</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 style="color: red;text-align: center;" *ngIf="resultData.length==0">
+                                        Data
+                                        Not Found !</h4>
+                                    <div class="accordion" id="accordionExample" *ngIf="resultData.length>0">
+
+                                        <div class="accordion-item card"
+                                            *ngFor="let r of resultData| paginate: {id:'listing1', itemsPerPage: 20, currentPage: pa };let i=index">
+                                            <div class="accordion-header card-header" id="headingOne" (click)="open(i)">
+                                                <button class="accordion-button card-link" type="button"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">{{r.title}}</button>
+                                            </div>
+                                            <div id="collapseOne" class="accordion-collapse" *ngIf="r.cols"
+                                                (click)="open(i)" aria-labelledby="headingOne"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body card-body">
+                                                    <div class="row">
+                                                        <div class="col-lg-12" style="text-align: center !important;">
+                                                            <img src="https://api.cesociety.in{{r.image}}" alt="result image"
+                                                                >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3" *ngIf="resultData.length>0">
+                                        <div class="col text-end">
+                                            <pagination-controls id="listing1" (pageChange)="pa = $event">
+                                            </pagination-controls>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="rs-footer" class="rs-footer">
+        <app-footer></app-footer>
+    </footer>
+</body>

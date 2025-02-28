@@ -1,0 +1,54 @@
+.intro-section .intro-tabb {
+  position: relative;
+  border: none;
+}
+
+/* .intro-section .intro-tabb .tab-btns {
+    position: relative;
+    text-align: center;
+    width: 25%;
+  } */
+.intro-section .intro-tabb .tab-btns .tab-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  background: none;
+  background: #ffffff;
+  color: #626262;
+  border: 1px solid #eee;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  float: left;
+  padding: 12px 40px 10px;
+  text-transform: capitalize;
+  transition: all 500ms ease;
+}
+
+.intro-section .intro-tabb .tab-btns .tab-btn:hover,
+.intro-section .intro-tabb .tab-btns .tab-btn.active {
+  color: #ffffff;
+  background: #a45e4d;
+  border-color: #a45e4d;
+}
+
+.intro-section .intro-tabb .tabs-content {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.intro-section .intro-tabb .tabs-content .minutes {
+  position: relative;
+  color: #a45e4d;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.scrollable-content {
+  max-height: 1080px;
+  overflow-y: auto;
+  overflow-x: auto;
+}

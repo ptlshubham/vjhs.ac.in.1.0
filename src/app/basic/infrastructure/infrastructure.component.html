@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="content white-bg pt-30 md-pt-64">
+    <div class="course-overview">
+        <div class="inner-box">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-content">
+                        <style>
+                            .rs-about.style1 .notice-bord.style1 {
+                                margin-top: 0px;
+                            }
+                        </style>
+                        <div class="rs-faq-part rs-about style1">
+                            <div class="container">
+                                <div class="main-part">
+                                    <div class="faq-content">
+                                        <div class="accordion pt-30" id="accordionExample">
+                                            <h4 class="pb-30" style="text-align: center;">Infrastructure & Facilities
+                                            </h4>
+
+                                            <h4 style="color: red;text-align: center;" *ngIf="mainData.length==0">Data
+                                                Not Found !</h4>
+                                            <div class="row" *ngIf="mainData.length>0">
+                                                <div class="col-sm-6 mb-3" *ngFor="let r of mainData;let i=index">
+                                                    <div class="accordion-item card">
+                                                        <div class="accordion-header card-header" id="headingThree"
+                                                            (click)="open(i)">
+                                                            <button class="card-link accordion-button collapsed"
+                                                                type="button" data-bs-target="#collapseTen"
+                                                                aria-expanded="false" aria-controls="collapseTen"
+                                                                style="background-color: #a45e4d; color: white !important;">{{r.infraTitle}}</button>
+                                                        </div>
+                                                        <div id="collapseTen" class="accordion-collapse " *ngIf="r.cols"
+                                                            (click)="open(i)" aria-labelledby="headingThree"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body card-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12"
+                                                                        *ngIf="r.infraImage!='undefined'">
+                                                                        <ngb-carousel [showNavigationArrows]="true"
+                                                                            [showNavigationIndicators]="true"
+                                                                            [interval]="2000" [keyboard]="true"
+                                                                            [pauseOnHover]="true" [wrap]="true"
+                                                                            [activeId]="'slideTwo'" class="carousel">
+                                                                            <ng-template ngbSlide
+                                                                                *ngFor="let c of r.multiImage;let i=index">
+                                                                                <div class="picsum-img-wrapper">
+                                                                                    <img src="https://api.cesociety.in{{c.image}}"
+                                                                                        alt="Random first slide">
+                                                                                </div>
+                                                                            </ng-template>
+                                                                        </ngb-carousel>
+                                                                    </div>
+                                                                    <div class="col-lg-12 mt-1">
+                                                                        <div [innerHTML]="r.infraDetails"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

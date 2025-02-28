@@ -1,0 +1,59 @@
+<div id="rs-about" class="rs-about style1 pt-100 pb-70 md-pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-part">
+                    <div class="sec-title mb-40 fulls">
+                        <iframe
+                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcesociety%2F&tabs=timeline&width=700&height=700&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=257809995950316"
+                            width="700" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="sec-title mb-40 smalls">
+                        <iframe
+                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcesociety%2F&tabs=timeline&width=340&height=350&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=257809995950316"
+                            width="340" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 pt-60 md-pt-10 ">
+                <div class="notice-bord style1">
+                    <ul>
+                        <div class="row">
+                            <div class="title text-center">
+                                <h3 style="color: white; margin-bottom: 0px;">News & Events</h3>
+                            </div>
+                            <li class="wow fadeInUp mb-4" data-wow-delay="300ms" data-wow-duration="2000ms"
+                                *ngIf="newsData.length==0">
+                                <h5 style="color: red; text-align: center;">News & Events not available.</h5>
+                            </li>
+
+                            <li class="wow fadeInUp mb-4" data-wow-delay="300ms" data-wow-duration="2000ms"
+                                *ngFor="let n of newsData ">
+                                <div class="date"><span>{{n.date |date}}</span></div>
+                                <div class="desc">
+                                    <div [innerHTML]="n.message"></div>
+                                    <a href="https://api.cesociety.in{{n.files}}" target="_blank"
+                                        *ngIf="n.files!='null'">
+                                        Download</a>
+                                </div>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="row mt-4" *ngIf="newsData.length>0">
+                    <div class="col text-center">
+                        <a routerLink="/more/news" routerLinkActive="active"
+                            class="btn btn-sm btn-outline-white mb-0">More News <i class="fa fa-arrow-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Section End -->
