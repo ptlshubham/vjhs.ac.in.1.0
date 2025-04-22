@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { DepartmentRoutes } from './department.routing';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StaffDetailsComponent } from './staff-details/staff-details.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { DepOverviewComponent } from './dep-overview/dep-overview.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 
 @NgModule({
   declarations: [
-    DepOverviewComponent
+  
+    StaffDetailsComponent,
+       StudentDetailsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild(DepartmentRoutes),
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LightboxModule
+
   ]
 })
 export class DepartmentModule { }

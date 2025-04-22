@@ -160,7 +160,7 @@
                         </li> -->
                         |
                         <li class="menu-item lm">
-                            <a href="https://cesociety.in/#/counselling" target="_blank">Free Counselling</a>
+                            <a href="https://cesociety.in/#/counselling" target="_blank">Free Psychological Counseling</a>
                         </li>
                     </ul>
 
@@ -184,12 +184,23 @@
                             aria-expanded="false" routerLink="/home" routerLinkActive="active">Home</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="https://cesociety.in" target="_blank">CES
-                                    Home</a> </li>
+                                    Home</a></li>
                         </ul>
                     </li>
                     <li class="btn-group">
-                        <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            routerLink="/basic/about" routerLinkActive="active">About Us</a>
+                        <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/basic/about" routerLinkActive="active">Our
+                                    History</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/basic/infra"
+                                    routerLinkActive="active">Infrastructure and Facilities</a></li>
+                            <li><a class="dropdown-item" routerLink="/basic/structure" routerLinkActive="active">Fee
+                                    Structure</a></li>
+                            <li><a class="dropdown-item" routerLink="/basic/session" routerLinkActive="active">School
+                                    Sessions</a></li>
+                        </ul>
                     </li>
                     <li class="btn-group">
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -197,71 +208,74 @@
 
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" routerLink="/gallery/photos"
-                                    routerLinkActive="active">Photos</a> </li>
-                            <li><a class="dropdown-item" routerLink="/more/magazine" routerLinkActive="active">Our
-                                    Magazine</a> </li>
+                                    routerLinkActive="active">Photos</a></li>
+                        </ul>
+                    </li>
+                    <li class="btn-group">
+                        <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Activities</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="javascript:void(0);"
+                                    (click)="openActivity('CO-Curricular')">Co-Curricular Activities</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0);"
+                                    (click)="openActivity('Extra-Curricular')">Extra-Curricular Activities</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="btn-group">
+                        <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" (click)="openLinks('syllabus')">Syllabus</a></li>
+                            <li><a class="dropdown-item" href="http://www.olabs.edu.in" target="_blank">Online Labs For
+                                    Science Experiments</a></li>
+                            <li><a class="dropdown-item" routerLink="/resource/project"
+                                    routerLinkActive="active">Projects</a></li>
                         </ul>
                     </li>
                     <li class="btn-group">
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Department</a>
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0);" class="dropdown-item"
-                                    *ngFor="let c of depDetails;let i=index"
-                                    (click)="handleClick(c.id)">{{c.department}}</a>
-                            </li>
+                            <li><a class="dropdown-item" routerLink="/department/staff" routerLinkActive="active">Staff
+                                    Details</a></li>
+                            <li><a class="dropdown-item" routerLink="/department/student"
+                                    routerLinkActive="active">Student Details</a></li>
                         </ul>
-                    </li>
-                    <li class="btn-group">
-                        <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            routerLink="/basic/infrastructure" routerLinkActive="active">Facilities</a>
-                    </li>
-                    <li class="btn-group">
-                        <a class="btn btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
                     </li>
                     <li class="btn-group">
                         <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Student Corner</a>
                         <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" (click)="openLinks('forms')">Forms</a></li>
+                            <li><a class="dropdown-item" (click)="openLinks('report')">Annual Reports</a></li>
+                            <li><a class="dropdown-item" routerLink="/more/news" routerLinkActive="active">Announcement
+                                    / News / Circular</a>
+                            </li>
                             <li><a class="dropdown-item" routerLink="/more/academic-calendar"
-                                    routerLinkActive="active">Academic Calendar</a> </li>
-                            <li><a class="dropdown-item" routerLink="/more/syllabus"
-                                    routerLinkActive="active">Syllabus</a></li>
-                            <li><a class="dropdown-item" routerLink="/more/scholarship"
-                                    routerLinkActive="active">Scholarships for Students</a></li>
+                                    routerLinkActive="active">Academic Calendar</a></li>
                             <li><a class="dropdown-item" routerLink="/more/paper" routerLinkActive="active">Old
-                                    Question Papers</a></li>
-                            <li><a class="dropdown-item" href="javascript:void(0);" (click)="openLinks('forms')">Form &
-                                    Formats</a> </li>
-                            <li><a class="dropdown-item" routerLink="/basic/campus-life"
-                                    routerLinkActive="active">Campus Life</a></li>
-                            <li><a class="dropdown-item" routerLink="/more/admission"
-                                    routerLinkActive="active">Admission Open</a>
+                                    Question Papers</a>
                             </li>
-                        </ul>
-                    </li>
-
-                    <li class="btn-group">
-                        <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">More</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" routerLink="/more/result" routerLinkActive="active">Results</a>
-                            </li>
-                            <li><a class="dropdown-item" routerLink="/more/news" routerLinkActive="active">News &
-                                    Events</a>
-                            </li>
-                            <li><a class="dropdown-item" href="javascript:void(0);"
-                                    (click)="openLinks('report')">Reports</a>
-                            </li>
+                            <li><a class="dropdown-item" routerLink="/more/answer-key" routerLinkActive="active">Answer
+                                    Key</a></li>
+                            <li><a class="dropdown-item" routerLink="/more/scholarship"
+                                    routerLinkActive="active">Scholarships for
+                                    Students</a></li>
+                            <li><a class="dropdown-item" routerLink="/resource/result"
+                                    routerLinkActive="active">Results</a></li>
                         </ul>
                     </li>
                     <li class="btn-group">
-                        <a class="btn btn-lg" routerLink="/basic/contact" routerLinkActive="active">Contact Us</a>
+                        <a class="btn btn-lg" routerLink="/ipcell" routerLinkActive="active">IP Cell</a>
                     </li>
-
+                    <li class="btn-group">
+                        <a class="btn btn-lg" routerLink="/basic/contact" routerLinkActive="active">Contact
+                            Us</a>
+                    </li>
                 </ul>
-
             </div>
         </nav>
         <!-- MOBILEMENU -->
@@ -273,8 +287,10 @@
                     <div class="col-lg-12 text-end">
                         <div class="rs-menu-area">
                             <div class="main-menu">
+
                                 <nav class="rs-menu">
                                     <ul class="nav-menu">
+
                                         <li class="menu-item-has-children">
                                             <a routerLink="/home" routerLinkActive="active">Home</a>
                                             <ul class="sub-menu">
@@ -283,8 +299,22 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/about" routerLinkActive="active">About Us</a>
+                                        <li class="menu-item-has-children">
+                                            <a>About Us</a>
+                                            <ul class="sub-menu">
+                                                <li><a routerLink="/basic/about" routerLinkActive="active">Our
+                                                        History</a>
+                                                </li>
+                                                <li><a routerLink="/basic/infra"
+                                                        routerLinkActive="active">Infrastructure and Facilities</a>
+                                                </li>
+                                                <li><a routerLink="/basic/structure" routerLinkActive="active">Fee
+                                                        Structure</a>
+                                                </li>
+                                                <li><a routerLink="/basic/session" routerLinkActive="active">School
+                                                        Sessions</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a>Gallery/Media</a>
@@ -292,66 +322,68 @@
                                             <ul class="sub-menu">
                                                 <li><a routerLink="/gallery/photos" routerLinkActive="active">Photos</a>
                                                 </li>
-                                                <li><a routerLink="/more/magazine" routerLinkActive="active">Our
-                                                        Magazine Balmitra</a> </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a>Department</a>
+                                            <a>Activities</a>
+                                            <ul class="sub-menu">
+                                                <li><a class="dropdown-item" href="javascript:void(0);"
+                                                        (click)="openActivity('CO-Curricular')">
+                                                        CO-Curricular Activities</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);"
+                                                        (click)="openActivity('Extra-Curricular')">Extra-Curricular
+                                                        Activities</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a>Resources</a>
                                             <ul class="sub-menu">
                                                 <li><a href="javascript:void(0);"
-                                                        *ngFor="let c of depDetails;let i=index"
-                                                        (click)="handleClick(c.id)">{{c.department}}</a>
+                                                        (click)="openLinks('syllabus')">Syllabus</a></li>
+                                                <li><a href="http://www.olabs.edu.in" target="_blank">Online Labs For
+                                                        Science Experiments</a>
                                                 </li>
+                                                <li><a routerLink="/resource/project"
+                                                        routerLinkActive="active">Projects</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/infrastructure"
-                                                routerLinkActive="active">Facilities</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a>Student Corner</a>
+                                        <li class="menu-item-has-children"><a>Department</a>
                                             <ul class="sub-menu">
+                                                <li><a routerLink="/department/staff" routerLinkActive="active">Staff
+                                                        Details</a></li>
+                                                <li><a routerLink="/department/student"
+                                                        routerLinkActive="active">Student Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children"><a>Student Corner</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="javascript:void(0);" (click)="openLinks('forms')">Forms</a>
+                                                </li>
+                                                <li><a href="javascript:void(0);" (click)="openLinks('report')">Annual
+                                                        Reports</a></li>
+                                                <li><a routerLink="/more/news" routerLinkActive="active">Announcement /
+                                                        News / Circular</a>
+                                                </li>
                                                 <li><a routerLink="/more/academic-calendar"
-                                                        routerLinkActive="active">Academic Calendar</a> </li>
-                                                <li><a routerLink="/more/syllabus"
-                                                        routerLinkActive="active">Syllabus</a></li>
-                                                <li><a routerLink="/more/scholarship"
-                                                        routerLinkActive="active">Scholarships for Students</a></li>
+                                                        routerLinkActive="active">Academic Calendar</a></li>
                                                 <li><a routerLink="/more/paper" routerLinkActive="active">Old
-                                                        Question Papers</a></li>
-                                                <li>
-                                                    <a href="javascript:void(0);" routerLink=""
-                                                        routerLinkActive="active" (click)="openLinks('forms')">Form &
-                                                        Formats</a>
+                                                        Question Papers</a>
                                                 </li>
-                                                <li><a routerLink="/basic/campus-life" routerLinkActive="active">Campus
-                                                        Life</a></li>
-                                                <li><a routerLink="/more/admission" routerLinkActive="active">Admission
-                                                        Open</a>
-                                                </li>
+                                                <li><a routerLink="/more/answer-key" routerLinkActive="active">Answer
+                                                        Key</a></li>
+                                                <li><a routerLink="/more/scholarship"
+                                                        routerLinkActive="active">Scholarships for
+                                                        Students</a></li>
+                                                <li><a routerLink="/resource/result"
+                                                        routerLinkActive="active">Results</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="javascript:void(0);">More</a>
-                                            <ul class="sub-menu">
-                                                <li><a routerLink="/more/result" routerLinkActive="active">Results</a>
-                                                </li>
-                                                <li>
-                                                    <a routerLink="/more/news" routerLinkActive="active">News &
-                                                        Events</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"
-                                                        (click)="openLinks('report')">Reports</a>
-                                                </li>
-                                            </ul>
+                                        <li>
+                                            <a routerLink="/ipcell" routerLinkActive="active">IP Cell</a>
                                         </li>
-                                        <li class="menu-item">
-                                            <a routerLink="/basic/contact" routerLinkActive="active">Contact Us</a>
+                                        <li>
+                                            <a routerLink="/basic/contact" routerLinkActive="active">Contact
+                                                Us</a>
                                         </li>
                                     </ul> <!-- //.nav-menu -->
                                 </nav>
@@ -383,84 +415,95 @@
                                             <li class="menu-item-has-children">
                                                 <a routerLink="/home" routerLinkActive="active">Home</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="https://cesociety.in" target="_blank">CES
-                                                            Home</a>
+                                                    <li><a href="https://cesociety.in" target="_blank">CES Home</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/about" routerLinkActive="active">About Us</a>
+                                            <li class="menu-item-has-children"><a>About Us</a>
+                                                <ul class="sub-menu">
+                                                    <li><a routerLink="/basic/about" routerLinkActive="active">Our
+                                                            History</a>
+                                                    </li>
+                                                    <li><a routerLink="/basic/infra"
+                                                            routerLinkActive="active">Infrastructure and Facilities</a>
+                                                    </li>
+                                                    <li><a routerLink="/basic/structure" routerLinkActive="active">Fee
+                                                            Structure</a>
+                                                    </li>
+                                                    <li><a routerLink="/basic/session" routerLinkActive="active">School
+                                                            Sessions</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a>Gallery/Media</a>
-    
+
                                                 <ul class="sub-menu">
-                                                    <li><a routerLink="/gallery/photos" routerLinkActive="active">Photos</a>
-                                                    </li>
-                                                    <li><a routerLink="/more/magazine" routerLinkActive="active">Our
-                                                            Magazine Balmitra</a> </li>
+                                                    <li><a routerLink="/gallery/photos"
+                                                            routerLinkActive="active">Photos</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
-                                                <a>Department</a>
+                                                <a>Activities</a>
+                                                <ul class="sub-menu">
+                                                    <li><a class="dropdown-item" href="javascript:void(0);"
+                                                            (click)="openActivity('CO-Curricular')">Co-Curricular
+                                                            Activities</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);"
+                                                            (click)="openActivity('Extra-Curricular')">Extra-Curricular
+                                                            Activities</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a>Resources</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="javascript:void(0);"
-                                                            *ngFor="let c of depDetails;let i=index"
-                                                            (click)="handleClick(c.id)">{{c.department}}</a>
+                                                            (click)="openLinks('syllabus')">Syllabus</a></li>
+                                                    <li><a href="http://www.olabs.edu.in" target="_blank">Online Labs
+                                                            For
+                                                            Science Experiments</a>
                                                     </li>
+                                                    <li><a routerLink="/resource/project"
+                                                            routerLinkActive="active">Projects</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/infrastructure"
-                                                    routerLinkActive="active">Facilities</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/committee" routerLinkActive="active">Commitees</a>
-                                            </li>
-                                            <li class="menu-item-has-children">
-                                                <a>Student Corner</a>
+                                            <li class="menu-item-has-children"><a>Department</a>
                                                 <ul class="sub-menu">
+                                                    <li><a routerLink="/department/staff"
+                                                            routerLinkActive="active">Staff Deatils</a></li>
+                                                    <li><a routerLink="/department/student"
+                                                            routerLinkActive="active">Student Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children"><a>Student Corner</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="javascript:void(0);"
+                                                            (click)="openLinks('forms')">Forms</a></li>
+                                                    <li><a href="javascript:void(0);"
+                                                            (click)="openLinks('report')">Annual Reports</a></li>
+                                                    <li><a routerLink="/more/news"
+                                                            routerLinkActive="active">Announcement / News / Circular</a>
+                                                    </li>
                                                     <li><a routerLink="/more/academic-calendar"
-                                                            routerLinkActive="active">Academic Calendar</a> </li>
-                                                    <li><a routerLink="/more/syllabus"
-                                                            routerLinkActive="active">Syllabus</a></li>
-                                                    <li><a routerLink="/more/scholarship"
-                                                            routerLinkActive="active">Scholarships for Students</a></li>
+                                                            routerLinkActive="active">Academic Calendar</a></li>
                                                     <li><a routerLink="/more/paper" routerLinkActive="active">Old
-                                                            Question Papers</a></li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" routerLink=""
-                                                            routerLinkActive="active" (click)="openLinks('forms')">Form
-                                                            &
-                                                            Formats</a>
+                                                            Question Papers</a>
                                                     </li>
-                                                    <li><a routerLink="/basic/campus-life"
-                                                            routerLinkActive="active">Campus
-                                                            Life</a></li>
-                                                    <li><a routerLink="/more/admission"
-                                                            routerLinkActive="active">Admission
-                                                            Open</a>
-                                                    </li>
+                                                    <li><a routerLink="/more/answer-key"
+                                                            routerLinkActive="active">Answer Key</a></li>
+                                                    <li><a routerLink="/more/scholarship"
+                                                            routerLinkActive="active">Scholarships for
+                                                            Students</a></li>
+                                                    <li><a routerLink="/resource/result"
+                                                            routerLinkActive="active">Results</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children">
-                                                <a href="javascript:void(0);">More</a>
-                                                <ul class="sub-menu">
-                                                    <li><a routerLink="/more/result"
-                                                            routerLinkActive="active">Results</a>
-                                                    </li>
-                                                    <li>
-                                                        <a routerLink="/more/news" routerLinkActive="active">News &
-                                                            Events</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);"
-                                                            (click)="openLinks('report')">Reports</a>
-                                                    </li>
-                                                </ul>
+                                            <li>
+                                                <a routerLink="/ipcell" routerLinkActive="active">IP Cell</a>
                                             </li>
-                                            <li class="menu-item">
-                                                <a routerLink="/basic/contact" routerLinkActive="active">Contact Us</a>
+                                            <li>
+                                                <a routerLink="/basic/contact" routerLinkActive="active">Contact
+                                                    Us</a>
                                             </li>
                                         </ul> <!-- //.nav-menu -->
                                     </nav>

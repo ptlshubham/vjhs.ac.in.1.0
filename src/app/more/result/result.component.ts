@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.css'],
+  standalone: false
 })
 export class ResultComponent implements OnInit {
   resultData: any = [];

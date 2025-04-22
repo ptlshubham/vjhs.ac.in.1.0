@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-scholarship',
   templateUrl: './scholarship.component.html',
-  styleUrls: ['./scholarship.component.css']
+  styleUrls: ['./scholarship.component.css'],
+  standalone: false
 })
 export class ScholarshipComponent implements OnInit {
   moreData: any = [];

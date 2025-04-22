@@ -4,9 +4,9 @@ import { PhotosComponent } from './photos/photos.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { GalleryRoutes } from './gallery.routing';
-import { HomeModule } from '../home/home.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { LightboxModule } from 'ngx-lightbox';
 
 
 @NgModule({
@@ -16,9 +16,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     SharedModule,
-    HomeModule,
+    RouterModule.forChild(GalleryRoutes),
+    NgbModule,
     NgxPaginationModule,
-    RouterModule.forChild(GalleryRoutes)
+    LightboxModule 
   ]
 })
-export class GalleryModule { }
+export class PhotosGalleryModule { }

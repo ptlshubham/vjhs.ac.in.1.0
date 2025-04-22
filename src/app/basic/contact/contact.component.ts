@@ -7,7 +7,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  standalone:false
 })
 export class ContactComponent implements OnInit {
   contactModel: any = {};

@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<body class="defult-home">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <div class="main-content">
+        <style>
+            p {
+                text-align: justify;
+            }
+        </style>
+        <section class="intro-section gray-bg pt-40 pb-100 md-pt-64 md-pb-70">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="video-column col-lg-12">
+                        <div class="inner-column">
+                            <div class="course-features-info">
+                                <div class="row">
+                                    <h3 style="text-align: center;">Students Details</h3>
+                                    <h4 style="color: red;text-align: center;" *ngIf="studentList.length==0">
+                                        Data
+                                        Not Found !</h4>
+                                    <div class="col-sm-6 col-lg-6"
+                                        *ngFor="let s of studentList | paginate: {id:'listing1', itemsPerPage: 10, currentPage: pa };let i=index">
+                                        <h5 style="text-align: center;">{{s.title}}</h5>
+                                        <div class="image-container mb-10">
+                                            <img [src]="s.thumb" loading="lazy" (click)="openZoomGallery(i)"
+                                                style="cursor: pointer;" alt="{{s.title}}" />
+                                        </div>
+                                        <div [innerHTML]="s.details"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3" *ngIf="studentList.length>0">
+                                <div class="col text-end">
+                                    <pagination-controls id="listing1" (pageChange)="pa = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<app-footer></app-footer>

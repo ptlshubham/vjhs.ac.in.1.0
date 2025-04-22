@@ -4,9 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  standalone: false
 })
 export class SearchComponent implements OnInit {
+
   search: any;
   constructor(
     private activatedRoute: ActivatedRoute

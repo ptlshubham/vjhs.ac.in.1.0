@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-right-image-text',
   templateUrl: './right-image-text.component.html',
-  styleUrls: ['./right-image-text.component.css']
+  styleUrls: ['./right-image-text.component.css'],
+  standalone:false
 })
 export class RightImageTextComponent implements OnInit {
   public newsData: any = [];

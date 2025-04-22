@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-infrastructure',
   templateUrl: './infrastructure.component.html',
-  styleUrls: ['./infrastructure.component.css']
+  styleUrls: ['./infrastructure.component.css'],
+  standalone: false
 })
 export class InfrastructureComponent implements OnInit {
   infraData: any = [];
@@ -47,42 +48,10 @@ export class InfrastructureComponent implements OnInit {
                   image:this.infraData[i].infraImage
                 }
               );
-              // if(this.mainData.length == this.infraData.length){
-
-              // }
           })
         }
        
       }
-      // this.infraData.forEach((element: any) => {
-      //   if (element.id) {
-      //     this.homeService.getInfraMultiImageById(element.id).subscribe((res: any) => {
-      //       this.multiImage = res;
-      //       this.mainData.push(
-      //         {
-      //           id: element.id,
-      //           institute_id: element.institute_id,
-      //           infraTitle: element.infraTitle,
-      //           infraDetails: element.infraDetails,
-      //           infraImage: element.infraImage,
-      //           createddate: element.createddate,
-      //           updateddate: element.updateddate,
-      //           multiImage: this.multiImage,
-      //         });
-      //         this.multiImage.push(
-      //           {
-      //             image:element.infraImage
-      //           }
-      //         )
-
-      //     })
-      //   }
-        
-      // });
-      // this.mainData.forEach((element: any, index: any) => {
-      //   element.cols = false;
-
-      // });
     })
   }
   open(i: any) {

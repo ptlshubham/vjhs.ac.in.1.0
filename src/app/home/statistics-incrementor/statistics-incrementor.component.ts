@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-statistics-incrementor',
   templateUrl: './statistics-incrementor.component.html',
-  styleUrls: ['./statistics-incrementor.component.css']
+  styleUrls: ['./statistics-incrementor.component.css'],
+  standalone:false
 })
 export class StatisticsIncrementorComponent implements OnInit {
   projectCount: number = 0;

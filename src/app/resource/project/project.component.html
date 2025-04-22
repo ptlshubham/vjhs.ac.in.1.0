@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<body class="defult-home">
+    <div class="main-content">
+
+        <style>
+            p {
+                text-align: justify;
+            }
+        </style>
+        <section class="intro-section gray-bg pt-40 pb-100 md-pt-70 md-pb-70">
+            <div class="container">
+                <h4 class="pb-10" style="text-align: center;">Projects</h4>
+                <div class="row clearfix">
+                    <ul class="nav nav-tabs intro-tabb tabs-box" id="myTab" role="tablist">
+                        <div *ngFor="let r of mainData;let i=index">
+                            <li *ngIf="r.cols" class="nav-item tab-btns" role="presentation" style="padding: 5px;">
+                                <a class="nav-link tab-btn active" id="prod-overview-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#prod-overview" role="tab" aria-controls="prod-overview"
+                                    aria-selected="true" (click)="open(i)">{{r.title}}</a>
+                            </li>
+                            <li *ngIf="!r.cols" class="nav-item tab-btns" role="presentation" style="padding: 5px;">
+                                <a class="nav-link tab-btn " id="prod-overview-tab" data-bs-toggle="tab" href="#"
+                                    data-bs-target="#prod-overview" role="tab" aria-controls="prod-overview"
+                                    aria-selected="true" (click)="open(i)">{{r.title}}</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="row clearfix" *ngFor="let r of mainData;let i=index" #descriptionRef>
+                    <div class="col-lg-12 md-mb-30 mt-30" *ngIf="r.cols" #scrollToElement>
+                        <div class="intro-info-tabs">
+                            <div class="tab-content tabs-content" id="myTabContent">
+                                <div class="tab-pane tab fade show active" id="prod-overview" role="tabpanel"
+                                    aria-labelledby="prod-overview-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-overview">
+                                            <div class="inner-box" style="text-align: center;">
+                                                <div class="row">
+                                                    <div class="col-lg-12"
+                                                        *ngIf="r.image!='null' && r.image!='undefined' && r.image!=undefined">
+                                                        <ngb-carousel [showNavigationArrows]="true"
+                                                            [showNavigationIndicators]="true" [interval]="2000"
+                                                            [keyboard]="true" [pauseOnHover]="true" [wrap]="true"
+                                                            [activeId]="'slideTwo'" class="carousel">
+                                                            <ng-template ngbSlide
+                                                                *ngFor="let c of r.multiImage;let i=index">
+                                                                <div class="picsum-img-wrapper">
+                                                                    <img src="https://api.cesociety.in{{c.image}}"
+                                                                        alt="Random first slide">
+                                                                </div>
+                                                            </ng-template>
+                                                        </ngb-carousel>
+                                                    </div>
+                                                    <div [innerHTML]="r.details" class="scrollable-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<app-footer></app-footer>

@@ -1,13 +1,13 @@
-<!-- <div id="rs-categories" class="rs-categories gray-bg style1 pt-10 pb-10 md-pt-10 md-pb-10">
+<div id="rs-categories" class="rs-categories gray-bg style1 pt-10 pb-10 md-pt-10 md-pb-10"
+    *ngIf="notificationData.length > 0">
     <div class="container">
-        <div class="row y-middle">
-            <a href="#" routerLink="/more/admission">
-                <div class="container-fluid blinking-bg">
-                    <p class="text-white" style="margin: 0 0 0px;font-size: 17px;padding: 10px 0 10px;">
-                        <strong>Admission Now open for Academic Year 2024-25.</strong>
-                    </p>
+        <div class="blinking-bg">
+            <marquee class="custom" onmouseover="this.stop();" onmouseout="this.start();">
+                <div *ngFor="let n of notificationData" class="notification-item text-white"
+                    style="padding-top: 26px !important;">
+                    <span [innerHTML]="n.message" class="text-white"></span>
                 </div>
-            </a>
+            </marquee>
         </div>
     </div>
-</div> -->
+</div>

@@ -6,9 +6,8 @@ declare var $: any;
   providedIn: 'root'
 })
 export class ApiService {
-  // public static HOST_URL: string = "http://localhost:9000";
   public static HOST_URL: string = "https://api.cesociety.in";
-
+  // public static HOST_URL: string = "http://localhost:9000";
   toasts: any[] = [];
   constructor(
     private http: HttpClient,
@@ -68,39 +67,38 @@ export class ApiService {
   public static getAllNewsDetailsURL: string = ApiService.HOST_URL + '/admin/GetAllNewsDetails/';
   public static getNewsOnlyForCESURL: string = ApiService.HOST_URL + '/admin/GetNewsOnlyForCES/';
   public static getMagazineListURL: string = ApiService.HOST_URL + '/admin/GetMagazineList';
-  public static savecounsellingDetailsURL: string = ApiService.HOST_URL + '/admin/SavecounsellingDetails'
+  public static saveCounselingDetailsURL: string = ApiService.HOST_URL + '/admin/SaveCounselingDetails'
   public static getResultDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetResultDetailsById/';
   public static getOthersByIdDetailsURL: string = ApiService.HOST_URL + '/admin/GetOthersByIdDetails/';
   public static getScholarshipDetailsURL: string = ApiService.HOST_URL + '/admin/GetScholarshipDetails/';
   public static getQuestionPapersDetailsURL: string = ApiService.HOST_URL + '/admin/GetQuestionPapersDetails/';
   public static getStudentListDataURL: string = ApiService.HOST_URL + '/admin/GetStudentListData/';
-  public static getNaacDataURL: string = ApiService.HOST_URL + '/admin/GetNaacData';
-  public static getKeyNoDataGroupByURL: string = ApiService.HOST_URL + '/admin/GetKeyNoDataGroupByWithSearch';
-  public static getCriteriaGroupByURL: string = ApiService.HOST_URL + '/admin/getCriteriaGroupBy';
-  public static sendCriteriaDetailsURL: string = ApiService.HOST_URL + '/admin/SendCriteriaDetails';
-  public static getCommitteeDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetCommitteeDetailsById/';
-  public static getCommitteeMultiImagesByIdURL: string = ApiService.HOST_URL + '/admin/GetCommitteeMultiImagesById/';
-  public static getNaacLinkDataURL: string = ApiService.HOST_URL + '/admin/GetNaacLinkData';
-  public static getPlacementDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetPlacementDetailsById/';
-  public static getPlacementMultiImagesByIdURL: string = ApiService.HOST_URL + '/admin/GetPlacementMultiImagesById/';
-  public static getResearchDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetResearchDetailsById/';
-  public static GetNewNaacDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetNewNaacDetailsById/';
-  public static getCampusMultiImagesByIdURL: string = ApiService.HOST_URL + '/admin/GetCampusMultiImagesById/';
-  public static getCampusDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetCampusDetailsById/';
-  public static getSyllabusDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetSyllabusDetailsById/';
+
 
 
 
   public static adminLoginURL: string = ApiService.HOST_URL + '/authenticate/adminLogin';
 
-  public static getDepMultiImageByIdURL: string = ApiService.HOST_URL + '/admin/GetDepMultiImageById/';
 
   //Cashfree APIS
   public static createCashfreeOrderURL: string = ApiService.HOST_URL + '/cashfree/createCashfreeOrder';
-
   public static saveAdmissionDetailsURL: string = ApiService.HOST_URL + '/admin/SaveAdmissionDetails';
   public static getAdmissionListDataURL: string = ApiService.HOST_URL + '/admin/GetAdmissionListData/';
   public static getAchievementsListDataURL: string = ApiService.HOST_URL + '/admin/GetAchievementsListData/';
+  public static getNotificationByIdDetailsURL: string = ApiService.HOST_URL + '/admin/GetNotificationByIdDetails/';
+  public static getAllAnswerkeyURL: string = ApiService.HOST_URL + '/admin/GetAllAnswerkey/';
+  public static getAllVideoDetailsURL: string = ApiService.HOST_URL + '/admin/GetAllVideoDetails/';
+  public static getProjectsDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetProjectsDetailsById/';
+  public static getProjectsMultiImageByIdURL: string = ApiService.HOST_URL + '/admin/GetProjectsMultiImageById/';
+  public static getActivityDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetActivityDetailsById/';
+
+
+  //Ipcell Apis
+ 
+  public static getCopyrightDataByIdURL : string = ApiService.HOST_URL + '/admin/GetCopyrightDataById/';
+  public static getTrademarkDataByIdURL : string = ApiService.HOST_URL + '/admin/GetTrademarkDataById/';
+  public static getPatentDataByIdURL : string = ApiService.HOST_URL + '/admin/GetPatentDataById/';
+
 
 
 

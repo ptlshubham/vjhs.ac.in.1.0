@@ -1,24 +1,22 @@
 .blinking-bg {
     height: auto;
-    width: 90%;
-    color: white;
-    animation: blink 1s infinite;
+    width: 100% !important;
+    background-color: #5a6230;
     border-radius: 5px;
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
 }
 
-@keyframes blink {
+.p-0 {
+    padding: 0px !important;
+}
 
-    0%,
-    49.9%,
-    100% {
-        background-color: #f1bf22;
-    }
+.custom {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
 
-    50%,
-    99.9% {
-        background-color: #5a6230;
-    }
+.notification-item {
+    display: inline-block;
+    margin-right: 10px; /* Reduce space between notifications */
+    padding: 0px !important; /* Ensure no extra padding */
+    line-height: normal; /* Adjust line height */
 }

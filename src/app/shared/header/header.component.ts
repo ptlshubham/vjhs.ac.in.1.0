@@ -9,7 +9,8 @@ import { StaffService } from 'src/app/core/services/staff.services';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  standalone:false
 })
 export class HeaderComponent implements OnInit {
   public isCollapsed = true;
@@ -60,6 +61,9 @@ export class HeaderComponent implements OnInit {
   openLinks(id: any) {
     this.router.navigate(['/more/links', id]);
   }
+  openActivity(id:any){
+    this.router.navigate(['/basic/activity', id]);
+  }
   getStaffDetails() {
     this.staffService.getBirthdayListData().subscribe((res: any) => {
       this.staffDataTable = res;
@@ -73,17 +77,6 @@ export class HeaderComponent implements OnInit {
   getLastUpdateSite() {
     this.homeService.getLastUpdateSiteByIdURL(localStorage.getItem('InstituteId')).subscribe((res: any) => {
       this.siteUpdate = res[0];
-    })
-  }
-  getNewsMaruqeeDetails() {
-    this.sliderNews = [];
-    this.homeService.getNaacLinkDetails().subscribe((res: any) => {
-      this.marqueeData = res;
-      this.marqueeData.forEach((element: any) => {
-        if (element.criteria == 'Slider News') {
-          this.sliderNews.push(element);
-        }
-      });
     })
   }
   handleClick(id: any) {

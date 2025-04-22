@@ -15,6 +15,11 @@
                                         data-bs-target="#prod-Photo" role="tab" aria-controls="prod-Photo"
                                         aria-selected="true">Photos</a>
                                 </li>
+                                <li class="nav-item tab-btns" role="presentation">
+                                    <a class="nav-link tab-btn" id="prod-video-tab" data-bs-toggle="tab" href="#"
+                                        data-bs-target="#prod-video" role="tab" aria-controls="prod-video"
+                                        aria-selected="false" (click)="openVideos()">Video</a>
+                                </li>
                             </ul>
                             <div class="tab-content tabs-content" id="myTabContent">
                                 <div class="tab-pane tab fade show active" id="prod-Photo" role="tabpanel"
@@ -26,20 +31,54 @@
                                                 <h4 style="color: red;text-align: center;" *ngIf="galleryImg.length==0">
                                                     Data
                                                     Not Found !</h4>
-                                                <div class="row" *ngIf="galleryImg.length>0">
-                                                    <div class="col-lg-4 mb-30 col-md-6"
-                                                        *ngFor="let c of galleryImg | paginate: {id:'listing1', itemsPerPage: 12, currentPage: pa };let i=index">
-                                                        <div class="gallery-img">
-                                                            <a class="image-popup"
-                                                                href="https://api.cesociety.in{{c.image}}"><img
-                                                                    src="https://api.cesociety.in{{c.image}}" alt=""></a>
+                                                <div class="row" *ngIf="galleryImg.length > 0">
+                                                    <div class="col-lg-3 mb-30 col-md-3"
+                                                        *ngFor="let image of galleryImg | paginate: { id: 'listing1', itemsPerPage: 16, currentPage: pa }; let i = index">
+                                                        <div class="image-container">
+                                                            <img [src]="image.thumb" loading="lazy"
+                                                                (click)="openZoomGallery(i)" style="cursor: pointer;"
+                                                                alt="{{image.keyword}}" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3" *ngIf="galleryImg.length>0">
                                                     <div class="row">
                                                         <div class="col text-end">
-                                                            <pagination-controls id="listing1" (pageChange)="pa = $event">
+                                                            <pagination-controls id="listing1"
+                                                                (pageChange)="pa = $event">
+                                                            </pagination-controls>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="prod-video" role="tabpanel"
+                                    aria-labelledby="prod-video-tab">
+                                    <div class="content white-bg pt-30">
+                                        <div class="course-mbio">
+                                            <div class="inner-box ">
+                                                <h4 style="color: red;text-align: center;" *ngIf="linksData.length==0">
+                                                    Data
+                                                    Not Found !</h4>
+                                                <div class="row" style="padding: 5px;" *ngIf="linksData.length > 0">
+                                                    <div class="col-md-6 col-xl-6 col-lg-6 col-sm-6 text-center"
+                                                        *ngFor="let l of linksData | paginate: { id: 'listing2', itemsPerPage: 10, currentPage: p }; let i = index">
+                                                        <div class="video-container">
+                                                            <iframe [src]="sanitizeUrl(l.link)" frameborder="0"
+                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                allowfullscreen>
+                                                            </iframe>
+                                                        </div>
+                                                        <h5 class="text-center mt-10">{{l.title}}</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3" *ngIf="linksData.length>0">
+                                                    <div class="row">
+                                                        <div class="col text-end">
+                                                            <pagination-controls id="listing2"
+                                                                (pageChange)="p = $event">
                                                             </pagination-controls>
                                                         </div>
                                                     </div>

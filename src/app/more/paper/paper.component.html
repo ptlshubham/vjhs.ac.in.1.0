@@ -14,7 +14,8 @@
                                                                         <button type="button"
                                                                                 class="btn btn-outline-primary"
                                                                                 id="dropdownBasic1" ngbDropdownToggle>
-                                                                                {{ selectedDepartment || 'Select Department' }}
+                                                                                {{ selectedDepartment || 'Select
+                                                                                Department' }}
                                                                         </button>
                                                                         <div ngbDropdownMenu
                                                                                 aria-labelledby="dropdownBasic1">
@@ -50,7 +51,8 @@
                                                                         <button type="button"
                                                                                 class="btn btn-outline-primary"
                                                                                 id="dropdownBasic3" ngbDropdownToggle>
-                                                                                {{ selectedSemester || 'Select Semester'}}
+                                                                                {{ selectedSemester || 'Select
+                                                                                Semester'}}
                                                                         </button>
                                                                         <div ngbDropdownMenu
                                                                                 aria-labelledby="dropdownBasic3">
@@ -119,16 +121,18 @@
                                                                                                                                 <div class="row"
                                                                                                                                         *ngIf="papersList.length > 0">
                                                                                                                                         <div class="col-lg-2 mb-30 col-md-2"
-                                                                                                                                                *ngFor="let c of papersList | paginate: {id:'listing1', itemsPerPage: 12, currentPage: pa }; let i = index">
-                                                                                                                                                <div
-                                                                                                                                                        class="gallery-img">
+                                                                                                                                                *ngFor="let c of papersList | paginate: {id:'listing1', itemsPerPage: 24, currentPage: pa }; let i = index">
+                                                                                                                                                <div class="gallery-img"
+                                                                                                                                                        style="text-align: center !important;">
                                                                                                                                                         <a href="https://api.cesociety.in{{c.files}}"
                                                                                                                                                                 target="_blank">
-                                                                                                                                                                <div class="mt-2 mb-2"
-                                                                                                                                                                        style="text-align: center !important;">
+                                                                                                                                                                <div
+                                                                                                                                                                        class="mt-2 mb-2">
                                                                                                                                                                         <span>{{c.subject}}</span>
                                                                                                                                                                 </div>
-                                                                                                                                                                <img src="assets/images/PDF.png" alt="">
+                                                                                                                                                                <img src="assets/images/PDF.png"
+                                                                                                                                                                        alt="paper"
+                                                                                                                                                                        width="80">
                                                                                                                                                                 <div class="mt-2"
                                                                                                                                                                         style="text-align: center !important;">
                                                                                                                                                                         <span>{{c.semester}}</span>

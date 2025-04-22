@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-magazine',
   templateUrl: './magazine.component.html',
-  styleUrls: ['./magazine.component.css']
+  styleUrls: ['./magazine.component.css'],
+  standalone: false
 })
 export class MagazineComponent implements OnInit {
   magazine: any = [];
@@ -30,4 +31,5 @@ export class MagazineComponent implements OnInit {
   }
 
 }
+
 

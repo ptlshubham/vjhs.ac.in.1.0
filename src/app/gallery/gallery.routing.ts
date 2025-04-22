@@ -4,10 +4,9 @@ import { PhotosComponent } from './photos/photos.component';
 export const GalleryRoutes: Routes = [{
     path: '',
     children: [
-        {
-            path: 'photos',
-            component: PhotosComponent
-        }
-
+    {
+        path: 'photos',
+        component: PhotosComponent
+    }
     ]
 }];

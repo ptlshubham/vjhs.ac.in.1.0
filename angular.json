@@ -46,7 +46,8 @@
               "src/assets/css/responsive.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-lightbox/lightbox.css"
             ],
             "scripts": [
               "src/assets/js/modernizr-2.8.3.min.js",
@@ -99,10 +100,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:production"
+              "buildTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:production"
             },
             "development": {
-              "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:development"
+              "buildTarget": "Shree-V.J-Patel-Higher-Secondary-School:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -110,7 +111,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Shree-V.J-Patel-Higher-Secondary-School:build"
+            "buildTarget": "Shree-V.J-Patel-Higher-Secondary-School:build"
           }
         },
         "test": {
@@ -140,7 +141,8 @@
               "src/assets/css/style.css",
               "src/assets/css/responsive.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/ngx-lightbox/lightbox.css"
 
             ],
             "scripts": [
@@ -160,6 +162,5 @@
         }
       }
     }
-  },
-  "defaultProject": "Shree-V.J-Patel-Higher-Secondary-School"
+  }
 }

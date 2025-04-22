@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-academic-calendar',
   templateUrl: './academic-calendar.component.html',
-  styleUrls: ['./academic-calendar.component.css']
+  styleUrls: ['./academic-calendar.component.css'],
+  standalone: false
 })
 export class AcademicCalendarComponent implements OnInit {
   moreData: any = [];

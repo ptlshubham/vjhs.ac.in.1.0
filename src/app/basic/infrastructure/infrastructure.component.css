@@ -1,0 +1,20 @@
+
+.rs-team.style1 .team-item .content-part{
+    top:45% !important;
+}
+
+.textCustom{
+    color: white !important;
+}
+.accordion-button::after {
+    font-family: "Font Awesome 5 Free"; /* Ensure FontAwesome is loaded */
+    font-weight: 900;
+}
+
+.accordion-button[aria-expanded="true"]::after {
+    content: "\f068" !important; /* FontAwesome minus icon */
+}
+
+.accordion-button[aria-expanded="false"]::after {
+    content: "\f067" !important; /* FontAwesome plus icon */
+}

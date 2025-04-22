@@ -5,7 +5,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-syllabus',
   templateUrl: './syllabus.component.html',
-  styleUrls: ['./syllabus.component.css']
+  styleUrls: ['./syllabus.component.css'],
+  standalone: false
 })
 export class SyllabusComponent implements OnInit {
   othersData: any = [];

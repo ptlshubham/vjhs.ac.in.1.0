@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<body class="defult-home">
+    <!-- Main content Start -->
+    <div class="main-content">
+        <div id="rs-about" class="rs-about style1 pb-100 md-pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="notice-bord style1">
+                            <h4 class="title">Answer Key</h4>
+                            <div *ngIf="answerkeyData.length==0" style="text-align: center; color: red;">
+                                No Messages Available.
+                            </div>
+                            <ul>
+                                <li class="wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms"
+                                    *ngFor="let n of answerkeyData ">
+                                    <div class="date"><span>{{n.date |date}}</span></div>
+                                    <div class="desc">
+                                        <div [innerHTML]="n.message"></div>
+                                        <a href="https://api.cesociety.in{{n.files}}" target="_blank"
+                                            *ngIf="n.files!='null'">
+                                            Download</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="rs-footer" class="rs-footer">
+        <app-footer></app-footer>
+    </footer>
+</body>

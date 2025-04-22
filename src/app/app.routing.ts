@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { IpcellComponent } from './ipcell/ipcell.component';
 
 
 export const AppRoutes: Routes = [
@@ -16,20 +17,24 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./basic/basic.module').then(m => m.BasicModule)
     },
     {
+        path: 'resource',
+        loadChildren: () => import('./resource/resource.module').then(m => m.ResourceModule)
+    },
+    {
         path: 'department',
         loadChildren: () => import('./department/department.module').then(m => m.DepartmentModule)
     },
     {
         path: 'gallery',
-        loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule)
-    },
-    {
-        path: 'iqac',
-        loadChildren: () => import('./iqac/iqac.module').then(m => m.IqacModule)
+        loadChildren: () => import('./gallery/gallery.module').then(m => m.PhotosGalleryModule)
     },
     {
         path: 'more',
         loadChildren: () => import('./more/more.module').then(m => m.MoreModule)
+    },
+    {
+        path: 'ipcell',
+        component: IpcellComponent
     },
 
 

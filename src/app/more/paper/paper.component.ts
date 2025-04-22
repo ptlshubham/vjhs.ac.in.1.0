@@ -4,7 +4,8 @@ import { HomeService } from 'src/app/core/services/home.services';
 @Component({
   selector: 'app-paper',
   templateUrl: './paper.component.html',
-  styleUrls: ['./paper.component.css']
+  styleUrls: ['./paper.component.css'],
+  standalone: false
 })
 export class PaperComponent implements OnInit {
   departmentData: any = [];

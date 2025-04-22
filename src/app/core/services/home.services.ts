@@ -48,7 +48,6 @@ export class HomeService {
         return this.http.get(ApiService.getDepartmentByIdDetailsURL + institute_id);
     }
     getYearData(institute_id: any) {
-        
         return this.http.get(ApiService.getYearbyGroupDetailsURL + institute_id);
     }
     removeDepartmentDataById(institute_id: any) {
@@ -98,8 +97,8 @@ export class HomeService {
     getNewsOnlyForCESURL(institute_id: any) {
         return this.http.get(ApiService.getNewsOnlyForCESURL + institute_id);
     }
-    savecounsellingDetail(data: any) {
-        return this.http.post(ApiService.savecounsellingDetailsURL, data);
+    saveCounselingDetail(data: any) {
+        return this.http.post(ApiService.saveCounselingDetailsURL, data);
     }
     getResultDetailsById(id: any) {
         return this.http.get(ApiService.getResultDetailsByIdURL + id);
@@ -116,61 +115,35 @@ export class HomeService {
     getStudentList(id: any) {
         return this.http.get(ApiService.getStudentListDataURL + id);
     }
-    getNAACData() {
-        return this.http.get(ApiService.getNaacDataURL);
-    }
-    getNewNaacDetails(id:any){
-        return this.http.get(ApiService.GetNewNaacDetailsByIdURL+id);
-    }
-    getKeyNoGroup(id: any) {
-        let data = {
-            criteria: id
-        };
-        return this.http.post(ApiService.getKeyNoDataGroupByURL, data);
-    }
-    getCriteriaGroup() {
-        return this.http.get(ApiService.getKeyNoDataGroupByURL);
-    }
-    sendCriteriaDetails(id: any) {
-        let data = {
-            criteria: id
-        };
-        return this.http.post(ApiService.sendCriteriaDetailsURL, data);
-    }
-    getCommeteeDetails(id: any) {
-        return this.http.get(ApiService.getCommitteeDetailsByIdURL + id);
-    }
-    getCommiteeMultiImageById(id: any) {
-        return this.http.get(ApiService.getCommitteeMultiImagesByIdURL + id);
-    }
-    getNaacLinkDetails() {
-        return this.http.get(ApiService.getNaacLinkDataURL);
-    }
-    getPlacementDetails(id: any) {
-        return this.http.get(ApiService.getPlacementDetailsByIdURL + id);
-    }
-    getPlacementMultiImageById(id: any) {
-        return this.http.get(ApiService.getPlacementMultiImagesByIdURL + id);
-    }
-    getResearchDetails(id: any) {
-        return this.http.get(ApiService.getResearchDetailsByIdURL + id);
-    }
-    getCampusDetails(id: any) {
-        return this.http.get(ApiService.getCampusDetailsByIdURL + id);
-    }
-    getCampusMultiImageById(id: any) {
-        return this.http.get(ApiService.getCampusMultiImagesByIdURL + id);
-    }
-    getSyllabusDetails(id: any) {
-        return this.http.get(ApiService.getSyllabusDetailsByIdURL + id);
-    }
-    SaveAdmissionDetails(data: any) {
-        return this.http.post(ApiService.saveAdmissionDetailsURL, data);
-    }
-    getDepMultiImageById(id: any) {
-        return this.http.get(ApiService.getDepMultiImageByIdURL + id);
-    }
     getAchievementsList(id: any) {
         return this.http.get(ApiService.getAchievementsListDataURL + id);
+    }
+    getNotificationDataById(institute_id: any) {
+        return this.http.get(ApiService.getNotificationByIdDetailsURL + institute_id);
+    }
+    getAnswerkeyOnlyForCESURL(id: any) {
+        return this.http.get(ApiService.getAllAnswerkeyURL + id);
+    }
+    getVideoDetails(id: any) {
+        return this.http.get(ApiService.getAllVideoDetailsURL + id);
+    }
+    getProjectsDetails(id: any) {
+        return this.http.get(ApiService.getProjectsDetailsByIdURL + id);
+    }
+    getProjectsMultiImageById(id: any) {
+        return this.http.get(ApiService.getProjectsMultiImageByIdURL + id);
+    }
+    getActivityDetails(id: any) {
+        return this.http.get(ApiService.getActivityDetailsByIdURL + id);
+    }
+    getCopyrightDataById(id: any) {
+        return this.http.get(ApiService.getCopyrightDataByIdURL + id);
+    }
+    getTrademarkDataById(id: any) {
+        debugger
+        return this.http.get(ApiService.getTrademarkDataByIdURL + id);
+    }
+    getPatentDataById(id: any) {
+        return this.http.get(ApiService.getPatentDataByIdURL + id);
     }
 }
