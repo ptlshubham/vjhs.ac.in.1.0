@@ -55,7 +55,7 @@ export class IpcellComponent implements OnInit {
   getTrademarkData() {
     this.ipcellService.getTrademarkDataById(localStorage.getItem('InstituteId')).subscribe((data) => {
       this.trademarksData = data;
-      debugger
+      
       for (let i = 0; i < this.trademarksData.length; i++) {
         this.trademarksData[i].index = i + 1;
       }

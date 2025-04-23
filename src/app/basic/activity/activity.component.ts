@@ -34,7 +34,7 @@ export class ActivityComponent implements OnInit {
       this.activityData = res.filter((item: any) => item.purpose == id);
       for (let i = 0; i < this.activityData.length; i++) {
         if (this.activityData[i].purpose == id) {
-          await this.homeService.getProjectsMultiImageById(this.activityData[i].id).toPromise().then((res: any) => {
+          await this.homeService.getActivityMultiImageById(this.activityData[i].id).toPromise().then((res: any) => {
             this.multiImage = res;
             this.mainData.push(
               {

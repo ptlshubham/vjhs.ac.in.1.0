@@ -91,6 +91,7 @@ export class ApiService {
   public static getProjectsDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetProjectsDetailsById/';
   public static getProjectsMultiImageByIdURL: string = ApiService.HOST_URL + '/admin/GetProjectsMultiImageById/';
   public static getActivityDetailsByIdURL: string = ApiService.HOST_URL + '/admin/GetActivityDetailsById/';
+  public static getActivityMultiImageByIdURL: string = ApiService.HOST_URL + '/admin/GetActivityMultiImageById/';
 
 
   //Ipcell Apis

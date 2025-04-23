@@ -140,10 +140,13 @@ export class HomeService {
         return this.http.get(ApiService.getCopyrightDataByIdURL + id);
     }
     getTrademarkDataById(id: any) {
-        debugger
+        
         return this.http.get(ApiService.getTrademarkDataByIdURL + id);
     }
     getPatentDataById(id: any) {
         return this.http.get(ApiService.getPatentDataByIdURL + id);
+    }
+    getActivityMultiImageById(id: any) {
+        return this.http.get(ApiService.getActivityMultiImageByIdURL + id);
     }
 }
